@@ -1,0 +1,5 @@
+#app_name = "sourcegraph"
+#region = "sfO2"
+#size = "s-4vcpu-8gb"
+#ssh_key_name = "sourcegraph"
+#ssh_key_file = "/Users/username/.ssh/id_rsa.pub"
