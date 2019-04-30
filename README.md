@@ -2,6 +2,8 @@
 
 This Terraform plan creates an SSH key and Droplet and deploys the latest stable version of Sourcegraph with TLS using a self-signed certificate.
 
+![DigitalOcean Terraform](https://user-images.githubusercontent.com/133014/56981924-e79fed00-6b34-11e9-9590-6d297d89bcd2.gif)
+
 ## Prerequisites
 
 - Make
