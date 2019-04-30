@@ -32,12 +32,12 @@ This will create the Droplet and poll the server to let you know when Sourcegrap
 
 Other commands include:
 
-- `make init`: Download the required Terraform provider packages.
-- `make plan`: Is there anything required to add, change or remove?
-- `make apply`: Create the Droplet and SSH key.
+- `make init`: Downloads the required Terraform provider packages.
+- `make plan`: Review what resources Terraform will create, change or remove.
+- `make apply`: Creates the Droplet and SSH key.
 - `make sourcegraph`: Waits for Sourcegraph to accept connections.
-- `make output`: Display the same output as when `make apply` completes.
-- `make destroy`: Removes the droplet and SSH key.
+- `make output`: Displays the same output as when `make apply` completes.
+- `make destroy`: Removes the Droplet and SSH key.
 
 > WARNING: `make destroy` will destroy the Droplet so back-up the `/etc/sourcegraph` and `/var/opt/sourcegraph` directories first.
 
