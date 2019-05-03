@@ -109,7 +109,7 @@ echo "[info]: Starting Sourcegraph \${SOURCEGRAPH_VERSION}"
 docker container run \\
     --name sourcegraph \\
     -d \\
-    --restart on-failure \\
+    --restart unless-stopped \\
     \\
     --network sourcegraph \\
     --hostname sourcegraph \\
