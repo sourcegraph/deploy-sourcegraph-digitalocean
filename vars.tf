@@ -9,7 +9,7 @@ variable "region" {
 }
 
 variable "size" {
-  default = "s-4vcpu-8gb"
+  default = "s-2vcpu-4gb"
   description = "Sets the droplet size"
 }
 
