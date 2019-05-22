@@ -7,7 +7,7 @@ resource "digitalocean_ssh_key" "this" {
 }
 
 resource "digitalocean_droplet" "this" {
-  image  = "ubuntu-18-04-x64"
+  image  = "docker-18-04"
   name   = "${var.app_name}"
   region = "${var.region}"
   size   = "${var.size}"
