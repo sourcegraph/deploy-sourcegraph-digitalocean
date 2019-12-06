@@ -1,5 +1,5 @@
 SHELL := /bin/bash
-HOSTNAME=$(shell make output | grep "Server =" | sed -n 's/.*https:\/\/\(.*\)\//\1/p')
+HOSTNAME=$(shell make output | grep "server =" | sed -n 's/.*https:\/\/\(.*\)\//\1/p')
 
 deploy: init validate plan apply sourcegraph
 
@@ -7,7 +7,7 @@ init:
 	terraform init -upgrade
 
 validate:
-	terraform validate -var-file terraform.tfvars
+	terraform validate
 
 plan: validate
 	terraform plan -var-file terraform.tfvars

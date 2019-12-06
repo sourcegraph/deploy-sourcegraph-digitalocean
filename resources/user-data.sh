@@ -35,7 +35,7 @@ mkdir -p ${SOURCEGRAPH_CONFIG}/management
 mkdir -p ${SOURCEGRAPH_DATA}
 
 # Install mkcert and generate root CA, certificate and key 
-wget https://github.com/FiloSottile/mkcert/releases/download/v${MKCERT_VERSION}/mkcert-v1.3.0-linux-amd64 -O /usr/local/bin/mkcert
+wget https://github.com/FiloSottile/mkcert/releases/download/v${MKCERT_VERSION}/mkcert-v${MKCERT_VERSION}-linux-amd64 -O /usr/local/bin/mkcert
 chmod a+x /usr/local/bin/mkcert
 
 # Use the public ip address of the instance as hostnae for the self-signed cert as DigitalOcean doesn't have public DNS hostnames
@@ -91,8 +91,8 @@ http {
         include nginx/sourcegraph_server.conf;
 
         listen 7443 ssl http2 default_server;        
-        ssl_certificate         cert/sourcegraph.crt;
-        ssl_certificate_key     cert/sourcegraph.key;
+        ssl_certificate         sourcegraph.crt;
+        ssl_certificate_key     sourcegraph.key;
 
         location / {
             proxy_pass http://backend;
@@ -120,7 +120,7 @@ cp ${SOURCEGRAPH_CONFIG}/sourcegraph.crt ${SOURCEGRAPH_CONFIG}/management/cert.p
 cp ${SOURCEGRAPH_CONFIG}/sourcegraph.key ${SOURCEGRAPH_CONFIG}/management/key.pem
 
 # Zip the CA Root key and certificate for easy downloading
-zip -j ${USER_HOME}/sourcegraph-root-ca.zip ${SOURCEGRAPH_CONFIG}/root*
+zip -j ${USER_HOME}/sourcegraph-root-ca.zip ${SOURCEGRAPH_CONFIG}/sourcegraph.crt ${SOURCEGRAPH_CONFIG}/sourcegraph.key
 
 cat > ${USER_HOME}/sourcegraph-start <<EOL
 #!/usr/bin/env bash
@@ -160,7 +160,7 @@ docker container run \\
 EOL
 
 cat > ${USER_HOME}/sourcegraph-stop <<EOL
-!/usr/bin/env bash
+#!/usr/bin/env bash
 
 echo "[info]:  Stopping Sourcegraph"
 docker container stop sourcegraph > /dev/null 2>&1 docker container rm sourcegraph
