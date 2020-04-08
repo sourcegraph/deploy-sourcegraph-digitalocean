@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export SOURCEGRAPH_VERSION=3.14.1
+export SOURCEGRAPH_VERSION=3.14.2
 export USER_HOME=/root
 export SOURCEGRAPH_CONFIG=/etc/sourcegraph
 export SOURCEGRAPH_DATA=/var/opt/sourcegraph
