@@ -8,5 +8,5 @@
 # .tfvars files
 *.tfvars
 
-# .dhall files
-**/*.dhall
+# specific dhall file that could contain sensitive information
+/right.dhall
