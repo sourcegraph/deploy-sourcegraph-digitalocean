@@ -1,0 +1,5 @@
+steps:
+  # This runs the Checkov scanner
+  # https://www.checkov.io/
+  - command: cmd/ci-checkov.sh
+    label: ':lock: security - checkov'
