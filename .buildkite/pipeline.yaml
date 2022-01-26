@@ -3,3 +3,4 @@ steps:
   # https://www.checkov.io/
   - command: cmd/ci-checkov.sh
     label: ':lock: security - checkov'
+    agents: { queue: standard }
