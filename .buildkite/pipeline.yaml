@@ -4,3 +4,4 @@ steps:
   - command: cmd/ci-checkov.sh
     label: ':lock: security - checkov'
     agents: { queue: standard }
+    soft_fail: true
