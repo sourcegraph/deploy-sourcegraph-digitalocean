@@ -63,3 +63,4 @@ The `bin/wait-for-it.sh` script uses the `timeout` binary which is not included 
 ```bash
   brew install coreutils
 ```
+Hello World
