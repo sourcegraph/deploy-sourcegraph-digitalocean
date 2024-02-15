@@ -1,5 +1,9 @@
 # Deploying Sourcegraph on DigitalOcean
 
+# 🚨 Deprecation Notice 🚨
+This repository is no longer a supported Sourcegraph deployment method.
+If you'd like to deploy Sourcegraph, please see our [Deployment Documentation](https://sourcegraph.com/docs/admin/deploy)
+
 This Terraform plan creates an SSH key and Droplet and deploys the latest stable version of Sourcegraph with TLS using a self-signed certificate.
 
 ![DigitalOcean Terraform](https://user-images.githubusercontent.com/133014/56981924-e79fed00-6b34-11e9-9590-6d297d89bcd2.gif)
