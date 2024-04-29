@@ -1,4 +1,5 @@
 # 🚨 Deprecation Notice 🚨
+
 This repository is no longer a supported Sourcegraph deployment method.
 If you'd like to deploy Sourcegraph, please see our [Deployment Documentation](https://sourcegraph.com/docs/admin/deploy) to learn about our supported deployment methods.
 
